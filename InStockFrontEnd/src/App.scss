@@ -1,0 +1,44 @@
+@use './styles/partials/mixins' as *;
+@use './styles/partials/variables' as *;
+
+.titillium-web-regular {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.titillium-web-semibold {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: "Titillium Web", sans-serif;
+}
+
+h1 {
+  font-size: 28px;
+
+  @include tablet {
+    font-size: 32px;
+  }
+}
+
+h2 {
+  font-size: 20px;
+
+  @include tablet {
+    font-size: 14px;
+  }
+}
+
+h4 {
+  font-size: 11px;
+
+  @include tablet {
+    font-size: 12px;
+  }
+}
+
