@@ -1,0 +1,58 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.addNewWarehouse__flex {
+    display: flex;
+    border-bottom: solid 1px $slate;
+    color: $graphite;
+    img {
+        padding-right: 1rem;
+    }
+}
+
+.newWarehouseFlex{
+    margin: 1rem;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    > div {
+        padding: 1rem;
+    }
+
+    label {
+        input {
+            border: 1px solid #bdc5d5; // grey border
+            border-radius: 20px; // rounded corners
+            padding: 0.5rem 1rem; // Combined padding for vertical and horizontal
+            width: 100%;
+            box-sizing: border-box; // This prevents padding from adding to the width
+            
+            &:focus {
+                outline: none;
+                border-color: #2e66e5; // optional: change border color on focus
+            }
+        }
+    }
+}
+
+.newWarehouse__input--title{
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.padding__oneRem {
+    padding-bottom: 1rem;
+}
+
+.padding__twoRem {
+    padding-bottom: 2rem;
+}
+
+@include tablet {
+
+}
+
+@include desktop{
+
+}
