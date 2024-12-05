@@ -36,7 +36,7 @@ function WarehouseList () {
                         <input className="warehouses--header__right--search-bar" type="text" placeholder="Search.." />
                     </form>
                     <form className="warehouses--header__right--button-container">
-                    <button type="submit" className="warehouses--header__right--button">+Add New Warehouse</button>
+                    <button type="submit" className="warehouses--header__right--button">+ Add New Warehouse</button>
                     </form>
                 </div>
             </div>
@@ -47,7 +47,7 @@ function WarehouseList () {
                         <div key={wh.id} className="warehouses--list--individual">
                             <div className="warehouses--list--individual__container warehouses--list--individual__warehouse">
                                 <p className="warehouses--list--individual__title">WAREHOUSE</p>
-                                <p className="warehouses--list--individual__details">{wh.warehouse_name}</p>
+                                <p className="warehouses--list--individual__details"><a href={`${API_URL}/api/warehouses/${wh.id}`} >{wh.warehouse_name}</a></p>
                             </div>
                             <div className="warehouses--list--individual__container warehouses--list--individual__address">
                                 <p className="warehouses--list--individual__title">ADDRESS</p>
