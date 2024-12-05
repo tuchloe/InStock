@@ -16,7 +16,7 @@
 .warehouses {
     width: 343px;
     margin: 136px 16px;
-    box-shadow: 0px 2px 5px 0px #13182C;
+    box-shadow: 0px 2px 2px 0px #13182C;
 
     &--header {
         display: flex;
@@ -82,11 +82,18 @@
             &__title {
                 font-size: 11px;
                 color: #5C667E;
+                margin-bottom: 8px;
             }
 
             &__details {
                 font-size: 13px;
                 color: #13182C;
+                margin-top: 0;
+                
+                &__link {
+                    text-decoration: none;
+                    font-weight: 600;
+                }
             }
 
             &__warehouse {

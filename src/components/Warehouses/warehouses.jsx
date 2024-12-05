@@ -47,7 +47,7 @@ function WarehouseList () {
                         <div key={wh.id} className="warehouses--list--individual">
                             <div className="warehouses--list--individual__container warehouses--list--individual__warehouse">
                                 <p className="warehouses--list--individual__title">WAREHOUSE</p>
-                                <p className="warehouses--list--individual__details"><a href={`${API_URL}/api/warehouses/${wh.id}`} >{wh.warehouse_name}</a></p>
+                                <p className="warehouses--list--individual__details"><a className="warehouses--list--individual__details__link" href={`${API_URL}/api/warehouses/${wh.id}`} >{wh.warehouse_name} > </a></p>
                             </div>
                             <div className="warehouses--list--individual__container warehouses--list--individual__address">
                                 <p className="warehouses--list--individual__title">ADDRESS</p>
@@ -70,8 +70,8 @@ function WarehouseList () {
                                 </p>
                             </div>
                             <div className="warehouses--list--individual--images">
-                                <img src={"../src/assets/Icons/delete_outline-24px.svg"} />
-                                <img src={"../src/assets/Icons/edit-24px.svg"} />
+                                <a href="#"><img src={"../src/assets/Icons/delete_outline-24px.svg"} /></a>
+                                <a href="#"><img src={"../src/assets/Icons/edit-24px.svg"} /></a>
                             </div>
                        </div>
                     ))}
