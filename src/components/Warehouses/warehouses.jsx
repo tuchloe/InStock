@@ -5,11 +5,6 @@ import "./warehouses.scss"
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
-// export const fetchWarehouses = async () => {
-//     const response = await axios.get(`${API_URL}/`);
-//     return response.data;
-// }
-
 function WarehouseList () {
     const {id} = useParams();
     const [warehouse, setWarehouse] = useState(null);
@@ -74,7 +69,11 @@ function WarehouseList () {
                                     {wh.contact_email}
                                 </p>
                             </div>
-                        </div>
+                            <div className="warehouses--list--individual--images">
+                                <img src={"../src/assets/Icons/delete_outline-24px.svg"} />
+                                <img src={"../src/assets/Icons/edit-24px.svg"} />
+                            </div>
+                       </div>
                     ))}
             </div>
         </section>

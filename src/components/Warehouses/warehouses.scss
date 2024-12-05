@@ -15,7 +15,6 @@
 
 .warehouses {
     width: 343px;
-    height: 1575px;
     margin: 136px 16px;
     box-shadow: 0px 2px 5px 0px #13182C;
 
@@ -41,6 +40,8 @@
             &--search-bar {
                 width: 295px;
                 height: 36px;
+                border: 1px solid rgb(175, 175, 175, .5);
+                padding-left: 16px;
                 border-radius: 20px;
                 margin-bottom: 16px;
             }
@@ -50,6 +51,7 @@
                 color: #FFFFFF;
                 border-radius: 20px;
                 padding: 8px 84px;
+                margin-bottom: 16px;
                 height: 36px;
                 border: none;
             }
@@ -62,9 +64,29 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
+            margin-top: 8px;
+            border-top: 1px solid #BDC5D5; 
+
+            &--images {
+                order: 5;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0 16px 16px 16px;
+            }
 
             &__container {
                 width: 40%;
+            }
+
+            &__title {
+                font-size: 11px;
+                color: #5C667E;
+            }
+
+            &__details {
+                font-size: 13px;
+                color: #13182C;
             }
 
             &__warehouse {
