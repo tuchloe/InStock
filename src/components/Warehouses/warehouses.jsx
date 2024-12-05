@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./warehouses.scss"
 
 function WarehouseList () {
 
@@ -13,9 +14,9 @@ function WarehouseList () {
                 </div>
                 <div className="warehouses--header__right">
                     <form className="warehouses--header__right--search">
-                        <input type="text" placeholder="Search.." />
+                        <input className="warehouses--header__right--search-bar" type="text" placeholder="Search.." />
                     </form>
-                    <form className="warehouses--header__right--button">
+                    <form className="warehouses--header__right--button-container">
                     <button type="submit" className="warehouses--header__right--button">+Add New Warehouse</button>
                     </form>
                 </div>
