@@ -55,4 +55,36 @@
             }
         }
     }
+
+    &--list {
+
+        &--individual {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            &__container {
+                width: 40%;
+            }
+
+            &__warehouse {
+                order: 1;
+            }
+
+            &__address {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                order: 3;
+            }
+
+            &__contact-name {
+                order: 2;
+            }
+
+            &__contact-information {
+                order: 4;
+            }
+        }
+    }
 }

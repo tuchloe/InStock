@@ -45,53 +45,33 @@ function WarehouseList () {
                     </form>
                 </div>
             </div>
-            {/* <div className="warehouses--list--total">
-                <div key={warehouse.id} className="warehouses--list--individual">
-                    <div className="warehouses--list--individual__warehouse">
-                        <p className="arehouses--list--individual__warehouse-title">WAREHOUSE</p>
-                        {warehouses && warehouses.filter((wh) => !id || wh.id === parseInt(id, 10))
-                        .map((wh) => (
-                            <p key={wh.id}>{wh.warehouse_name}</p>
-                        ))}
-                    </div>
-                    <div className="warehouses--list--individual__address">
-                    <p className="arehouses--list--individual__address-title">ADDRESS</p>
-                    </div>
-                    <div className="warehouses--list--individual__contact-name">
-                    <p className="arehouses--list--individual__contact-name-title">CONTACT NAME</p>
-                    </div>
-                    <div className="warehouses--list--individual__contact-information">
-                    <p className="arehouses--list--individual__contact-information-title">CONTACT INFORMATION</p>
-                    </div>
-                </div>
-            </div> */}
 
-            <div className="warehouses--list--total">
+            <div className="warehouses--list">
                 {warehouses &&
                     warehouses.map((wh) => (
                         <div key={wh.id} className="warehouses--list--individual">
-                            <div className="warehouses--list--individual__warehouse">
-                                <p className="warehouses--list--individual__warehouse-title">WAREHOUSE</p>
-                                <p className="warehouses--list--individual__warehouse-name">{wh.warehouse_name}</p>
+                            <div className="warehouses--list--individual__container warehouses--list--individual__warehouse">
+                                <p className="warehouses--list--individual__title">WAREHOUSE</p>
+                                <p className="warehouses--list--individual__details">{wh.warehouse_name}</p>
                             </div>
-                            <div className="warehouses--list--individual__address">
-                                <p className="warehouses--list--individual__address-title">ADDRESS</p>
-                                <p className="warehouses--list--individual__address-details">
+                            <div className="warehouses--list--individual__container warehouses--list--individual__address">
+                                <p className="warehouses--list--individual__title">ADDRESS</p>
+                                <p className="warehouses--list--individual__details">
                                     {wh.address}, {wh.city}, {wh.country}
                                 </p>
                             </div>
-                            <div className="warehouses--list--individual__contact-name">
-                                <p className="warehouses--list--individual__contact-name-title">CONTACT NAME</p>
-                                <p className="warehouses--list--individual__contact-name-details">
+                            <div className="warehouses--list--individual__container warehouses--list--individual__contact-name">
+                                <p className="warehouses--list--individual__title">CONTACT NAME</p>
+                                <p className="warehouses--list--individual__details">
                                     {wh.contact_name}
                                 </p>
                             </div>
-                            <div className="warehouses--list--individual__contact-information">
-                                <p className="warehouses--list--individual__contact-information-title">CONTACT INFORMATION</p>
-                                <p className="warehouses--list--individual__contact-information-details">
-                                    Phone: {wh.contact_phone}
+                            <div className="warehouses--list--individual__container warehouses--list--individual__contact-information">
+                                <p className="warehouses--list--individual__title">CONTACT INFORMATION</p>
+                                <p className="warehouses--list--individual__details">
+                                    {wh.contact_phone}
                                     <br />
-                                    Email: {wh.contact_email}
+                                    {wh.contact_email}
                                 </p>
                             </div>
                         </div>
