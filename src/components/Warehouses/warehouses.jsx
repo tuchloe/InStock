@@ -7,7 +7,7 @@ const API_URL = import.meta.env.VITE_APP_API_URL;
 
 function WarehouseList () {
     const {id} = useParams();
-    const [warehouse, setWarehouse] = useState(null);
+    const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
     const [warehouses, setWarehouses] = useState([]);
 
     useEffect(() => {
@@ -23,6 +23,34 @@ function WarehouseList () {
 
         fetchData();
     }, [id]);
+
+    const handleSort = (key) => {
+        let direction = "asc";
+        if (sortConfig.key === key && sortConfig.direction === "asc") {
+            direction ="desc";
+        }
+
+        setSortConfig({ key, direction });
+    } 
+
+    const sortedWarehouses = [...warehouses].sort((a, b) => {
+        if (sortConfig.key) {
+            const valueA = a[sortConfig.key] || "";
+            const valueB = b[sortConfig.key] || "";
+
+            if (typeof valueA === "string" && typeof valueB === "string") {
+                return (
+                  (valueA.toLowerCase() > valueB.toLowerCase() ? 1 : -1) *
+                  (sortConfig.direction === "asc" ? 1 : -1)
+                );
+              }
+    
+              if (typeof valueA === "number" && typeof valueB === "number") {
+                return (valueA - valueB) * (sortConfig.direction === "asc" ? 1 : -1);
+              }
+            }
+            return 0;
+          });
 
     return (
         <>
@@ -41,28 +69,72 @@ function WarehouseList () {
                 </div>
             </div>
 
-            <div className="warehouses--list">
-                {warehouses &&
-                    warehouses.map((wh) => (
-                        <div key={wh.id} className="warehouses--list--individual">
-                            <div className="warehouses--list--individual__container warehouses--list--individual__warehouse">
-                                <p className="warehouses--list--individual__title">WAREHOUSE</p>
-                                <p className="warehouses--list--individual__details"><a className="warehouses--list--individual__details__link" href={`${API_URL}/api/warehouses/${wh.id}`} >{wh.warehouse_name} > </a></p>
+            <div className="warehouses--list__mobile">
+                {warehouses && warehouses.map((wh) => (
+                    <div key={wh.id} className="warehouses--list--individual">
+                        <div className="warehouses--list--individual__container warehouses--list--individual__warehouse">
+                            <p className="warehouses--list--individual__title">WAREHOUSE</p>
+                            <p className="warehouses--list--individual__details"><a className="warehouses--list--individual__details__link" href={`${API_URL}/api/warehouses/${wh.id}`} >{wh.warehouse_name} {'>'} </a></p>
+                        </div>
+                        <div className="warehouses--list--individual__container warehouses--list--individual__address">
+                            <p className="warehouses--list--individual__title">ADDRESS</p>
+                            <p className="warehouses--list--individual__details">
+                                {wh.address}, {wh.city}, {wh.country}
+                            </p>
+                        </div>
+                        <div className="warehouses--list--individual__container warehouses--list--individual__contact-name">
+                            <p className="warehouses--list--individual__title">CONTACT NAME</p>
+                            <p className="warehouses--list--individual__details">
+                                {wh.contact_name}
+                            </p>
+                        </div>
+                        <div className="warehouses--list--individual__container warehouses--list--individual__contact-information">
+                            <p className="warehouses--list--individual__title">CONTACT INFORMATION</p>
+                            <p className="warehouses--list--individual__details">
+                                {wh.contact_phone}
+                                <br />
+                                {wh.contact_email}
+                            </p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <div className="warehouses--list__desktop">
+                <div className="warehouses--list--header">
+                    <div className="warehouses--list--header__item" onClick={() => handleSort("warehouse_name")}>
+                        Warehouse
+                    </div>
+                    <div className="warehouses--list--header__item" onClick={() => handleSort("address")}>
+                        Address
+                    </div>
+                    <div className="warehouses--list--header__item" onClick={() => handleSort("contact_name")}>
+                        Contact Name
+                    </div>
+                    <div className="warehouses--list--header__item" onClick={() => handleSort("contact_phone")}>
+                        Contact Information
+                    </div>
+                    <div className="warehouses--list--header__item">Actions</div>
+                </div>
+                {sortedWarehouses.map((wh) => (
+                    <div key={wh.id} className="warehouses--list--individual">
+                        <div className="warehouses--list--individual__container warehouses--list--individual__warehouse">
+                            <p className="warehouses--list--individual__details">
+                                <a className="warehouses--list--individual__details__link" href={`${API_URL}/api/warehouses/${wh.id}`}>
+                                    {wh.warehouse_name} {">"}
+                                </a>
+                            </p>
                             </div>
                             <div className="warehouses--list--individual__container warehouses--list--individual__address">
-                                <p className="warehouses--list--individual__title">ADDRESS</p>
                                 <p className="warehouses--list--individual__details">
                                     {wh.address}, {wh.city}, {wh.country}
                                 </p>
                             </div>
                             <div className="warehouses--list--individual__container warehouses--list--individual__contact-name">
-                                <p className="warehouses--list--individual__title">CONTACT NAME</p>
                                 <p className="warehouses--list--individual__details">
                                     {wh.contact_name}
                                 </p>
                             </div>
                             <div className="warehouses--list--individual__container warehouses--list--individual__contact-information">
-                                <p className="warehouses--list--individual__title">CONTACT INFORMATION</p>
                                 <p className="warehouses--list--individual__details">
                                     {wh.contact_phone}
                                     <br />
@@ -73,7 +145,7 @@ function WarehouseList () {
                                 <a href="#"><img src={"../src/assets/Icons/delete_outline-24px.svg"} /></a>
                                 <a href="#"><img src={"../src/assets/Icons/edit-24px.svg"} /></a>
                             </div>
-                       </div>
+                        </div>
                     ))}
             </div>
         </section>
