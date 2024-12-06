@@ -61,7 +61,7 @@ function WarehouseList () {
                 </div>
                 <div className="warehouses--header__right">
                     <form className="warehouses--header__right--search">
-                        <input className="warehouses--header__right--search-bar" type="text" placeholder="Search.." />
+                        <input className="warehouses--header__right--search-bar" type="text" placeholder="Search... " />
                     </form>
                     <form className="warehouses--header__right--button-container">
                     <button type="submit" className="warehouses--header__right--button">+ Add New Warehouse</button>
@@ -102,16 +102,16 @@ function WarehouseList () {
             <div className="warehouses--list__desktop">
                 <div className="warehouses--list--header">
                     <div className="warehouses--list--header__item" onClick={() => handleSort("warehouse_name")}>
-                        Warehouse
+                        Warehouse<img src={"../src/assets/Icons/sort-24px.svg"} />
                     </div>
                     <div className="warehouses--list--header__item" onClick={() => handleSort("address")}>
-                        Address
+                        Address<img src={"../src/assets/Icons/sort-24px.svg"} />
                     </div>
                     <div className="warehouses--list--header__item" onClick={() => handleSort("contact_name")}>
-                        Contact Name
+                        Contact Name<img src={"../src/assets/Icons/sort-24px.svg"} />
                     </div>
                     <div className="warehouses--list--header__item" onClick={() => handleSort("contact_phone")}>
-                        Contact Information
+                        Contact Information<img src={"../src/assets/Icons/sort-24px.svg"} />
                     </div>
                     <div className="warehouses--list--header__item">Actions</div>
                 </div>
