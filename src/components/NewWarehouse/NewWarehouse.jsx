@@ -4,6 +4,8 @@ import { baseUrl } from '../../../utils/utils';
 import './NewWarehouse.scss';
 import arrowBack from '../../assets/Icons/arrow_back-24px.svg';
 
+
+
 const NewWarehouse = () => {
 
     const handleSubmit = async (e) => {
@@ -58,47 +60,52 @@ const NewWarehouse = () => {
                     <img src={arrowBack} alt="" />
                     <h1>Add New Warehouse</h1>
                 </div>
-                <div>
-                    <div className='padding__oneRem'>
-                        <h2>Warehouse Details</h2>
+                <div className='form__flex'>
+                    <div>
+                        <div className='padding__oneRem'>
+                            <h2>Warehouse Details</h2>
+                        </div>
+                        <label>
+                            <span>Warehouse Name </span><br/> <input type='text' name='warehouseName' placeholder='Warehouse name'/>
+                        </label>
+                        <br />
+                        <label>
+                            <span>Street Address</span>
+                            <br /> 
+                            <input type='text' name='streetAddress' placeholder='street address'/>
+                        </label>
+                        <br />
+                        <label>
+                            <span>City</span> <br /><input type='text' name='city' placeholder='City'/>
+                        </label>
+                        <br />
+                        <label>
+                            <span>Country</span> <br /> <input type='text' name='country' placeholder='Country'/>
+                        </label>
                     </div>
-                    <label>
-                        <span className='newWarehouse__input--title'>Warehouse Name </span><br/> <input type='text' name='warehouseName' placeholder='Warehouse name'/>
-                    </label>
-                    <br />
-                    <label>
-                        <span className='newWarehouse__input--title'>Street Address</span>
-                        <br /> 
-                        <input type='text' name='streetAddress' placeholder='street address'/>
-                    </label>
-                    <br />
-                    <label>
-                        <span className='newWarehouse__input--title'>City</span> <br /><input type='text' name='city' placeholder='City'/>
-                    </label>
-                    <br />
-                    <label>
-                        <span className='newWarehouse__input--title'>Country</span> <br /> <input type='text' name='country' placeholder='Country'/>
-                    </label>
+                    <div>
+                        <div className='padding__oneRem'>
+                            <h2>Contact Details</h2>
+                        </div>
+                        <label>
+                            <span>Contact Name</span> <br /><input type='text' name='contactName' placeholder='Contact Name'/>
+                        </label>
+                        <br />
+                        <label>
+                            <span>Position</span> <br /> <input type='text' name='position' placeholder='Position'/>
+                        </label>
+                        <br />
+                        <label>
+                            <span>Phone Number</span> <br /> <input type='text' name='phoneNumber' placeholder='Phone Number'/>
+                        </label>
+                        <br />
+                        <label>
+                            <span>Email</span> <br /> <input type='text' name='email' placeholder='Email'/>
+                        </label>
+                    </div>
                 </div>
-                <div>
-                    <h2>Contact Details</h2>
-                    <label>
-                        <span className='newWarehouse__input--title'>Contact Name</span> <br /><input type='text' name='contactName' placeholder='Contact Name'/>
-                    </label>
-                    <br />
-                    <label>
-                        <span className='newWarehouse__input--title'>Position</span> <br /> <input type='text' name='position' placeholder='Position'/>
-                    </label>
-                    <br />
-                    <label>
-                        <span className='newWarehouse__input--title'>Phone Number</span> <br /> <input type='text' name='phoneNumber' placeholder='Phone Number'/>
-                    </label>
-                    <br />
-                    <label>
-                        <span className='newWarehouse__input--title'>Email</span> <br /> <input type='text' name='email' placeholder='Email'/>
-                    </label>
-                </div>
-                <div className='submit'>
+
+                <div className='newWarehouse__submit'>
                     <div>Cancel</div>
                     <button>+ Add Warehouse</button>
                 </div>

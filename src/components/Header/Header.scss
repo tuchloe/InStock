@@ -1,7 +1,9 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+
 .header__flex {
+    @include titillium-web-semibold;
     background-color: $graphite;
     padding-top: 1rem;
     padding-left: 1rem;
@@ -59,7 +61,10 @@
 
 @include desktop {
     .header__flex{
+        width: auto;
         padding-left: auto;
         padding-right: auto;
+        max-width: 100%;
+
     }
 }
