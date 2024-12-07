@@ -24,24 +24,27 @@ function IndividualWarehouse () {
 
     if (!warehouse) {
         return <p>Loading...</p>;
-      }
+    }
 
     return (
         <>
         <section className="individual-warehouse">
             <div className="individual-warehouse--header">
                 <div className="individual-warehouse--header__left">
-                    <img className="individual-warehouse--header__left--image" src={"../src/assets/Icons/arrow_back-24px.svg"} />
+                    <a className="individual-warehouse--header__left--link" href="/"><img className="individual-warehouse--header__left--image" src={"../src/assets/Icons/arrow_back-24px.svg"} /></a>
                     <h1 className="individual-warehouse--header__left--name">{warehouse.warehouse_name}</h1>
                 </div>
                 <div className="individual-warehouse--header__right">
-                    <img className="individual-warehouse--header__right--image" src={"../src/assets/Icons/edit-white-24px.svg"} />
+                    <p className="individual-warehouse--header__right--text">
+                        <img className="individual-warehouse--header__right--image" src={"../src/assets/Icons/edit-white-24px.svg"} />
+                        Edit
+                    </p>
                 </div>
             </div>
             <div className="individual-warehouse--info">
                 <div className="individual-warehouse--info__left">
                     <p className="individual-warehouse--info--header">WAREHOUSE ADDRESS:</p>
-                    <p className="individual-warehouse--info--details">{warehouse.address}</p>
+                    <p className="individual-warehouse--info--details">{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
                 </div>
                 <div className="individual-warehouse--info__right">
                     <div className="individual-warehouse--info__right--1">
