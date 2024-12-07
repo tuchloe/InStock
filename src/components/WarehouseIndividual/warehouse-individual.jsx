@@ -35,27 +35,24 @@ function IndividualWarehouse () {
                     <h1 className="individual-warehouse--header__left--name">{warehouse.warehouse_name}</h1>
                 </div>
                 <div className="individual-warehouse--header__right">
-                    <p className="individual-warehouse--header__right--text">
-                        <img className="individual-warehouse--header__right--image" src={"../src/assets/Icons/edit-white-24px.svg"} />
-                        Edit
-                    </p>
+                    <img className="individual-warehouse--header__right--image" src={"../src/assets/Icons/edit-white-24px.svg"} />
+                    <p className="individual-warehouse--header__right--text">Edit</p>
                 </div>
             </div>
             <div className="individual-warehouse--info">
                 <div className="individual-warehouse--info__left">
                     <p className="individual-warehouse--info--header">WAREHOUSE ADDRESS:</p>
-                    <p className="individual-warehouse--info--details">{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
+                    <p className="individual-warehouse--info--details__mobile">{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
+                    <p className="individual-warehouse--info--details__tablet">{warehouse.address},<br />{warehouse.city}, {warehouse.country}</p>
                 </div>
                 <div className="individual-warehouse--info__right">
                     <div className="individual-warehouse--info__right--1">
                         <p className="individual-warehouse--info--header">CONTACT NAME:</p>
-                        <p className="individual-warehouse--info--details">{warehouse.contact_name}</p>
-                        <p className="individual-warehouse--info--details">{warehouse.contact_position}</p>
+                        <p className="individual-warehouse--info--details">{warehouse.contact_name}<br />{warehouse.contact_position}</p>
                     </div>
                     <div className="individual-warehouse--info__right--2">
                         <p className="individual-warehouse--info--header">CONTACT INFORMATION:</p>
-                        <p className="individual-warehouse--info--details">{warehouse.contact_phone}</p>
-                        <p className="individual-warehouse--info--details">{warehouse.contact_email}</p>
+                        <p className="individual-warehouse--info--details">{warehouse.contact_phone}<br />{warehouse.contact_email}</p>
                     </div>
                 </div>
             </div>

@@ -99,21 +99,51 @@
         }
 
         &--details {
+
+            &__mobile {
             font-size: 13px;
             color: $instock-black;
             font-family: "titillim-web-regular", Arial, sans-serif;
+
+            @include tablet {
+                display: none;
+            }
+            }
+
+            &__tablet {
+                display: none;
+
+                @include tablet {
+                    display: block;
+                    font-size: 13px;
+                    color: $instock-black;
+                    font-family: "titillim-web-regular", Arial, sans-serif;
+                }
+            }
         }
 
         &__left {
 
             @include tablet {
-                flex-grow: 2;
+                margin-right: 150px;
+                
             }
         }
 
         &__right {
             display: flex;
             justify-content: space-between;
+
+            @include tablet {
+                border-left: 1px solid $cloud;
+            }
+
+            &--1 {
+
+                @include tablet {
+                    margin: 0 32px;
+                }
+            }
         }
     }
 }
