@@ -51,15 +51,16 @@
 
         &__right {
             background-color: $instock-indigo;
-            width: 36px;
-            height: 36px;
+            width: 42px;
+            height: 42px;
             border-radius: 20px;
+            border: none;
 
             @include tablet {
-                width: 81px;
-                height: 38px;
-                padding: 8px 16px;
+                width: 92px;
+                height: 42px;
                 border-radius: 30px;
+                border: none;
             }
 
             &--content {
