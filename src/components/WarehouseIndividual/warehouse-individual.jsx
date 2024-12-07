@@ -35,8 +35,10 @@ function IndividualWarehouse () {
                     <h1 className="individual-warehouse--header__left--name">{warehouse.warehouse_name}</h1>
                 </div>
                 <div className="individual-warehouse--header__right">
-                    <img className="individual-warehouse--header__right--image" src={"../src/assets/Icons/edit-white-24px.svg"} />
-                    <p className="individual-warehouse--header__right--text">Edit</p>
+                    <div className="individual-warehouse--header__right--content">
+                        <img className="individual-warehouse--header__right--image" src={"../src/assets/Icons/edit-white-24px.svg"} />
+                        <p className="individual-warehouse--header__right--text">Edit</p>
+                    </div>
                 </div>
             </div>
             <div className="individual-warehouse--info">
