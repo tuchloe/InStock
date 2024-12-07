@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./warehouses.scss"
+import "./warehouses.scss";
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
@@ -14,7 +14,6 @@ function WarehouseList () {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${API_URL}/api/warehouses`);
-                console.log(`${API_URL}`);
                 setWarehouses(response.data);
             } catch (error) {
                 console.error("Error fetching warehouses:", error);
@@ -74,7 +73,7 @@ function WarehouseList () {
                     <div key={wh.id} className="warehouses--list--individual">
                         <div className="warehouses--list--individual__container warehouses--list--individual__warehouse">
                             <p className="warehouses--list--individual__title">WAREHOUSE</p>
-                            <p className="warehouses--list--individual__details"><a className="warehouses--list--individual__details__link" href={`${API_URL}/api/warehouses/${wh.id}`} >{wh.warehouse_name} {'>'} </a></p>
+                            <p className="warehouses--list--individual__details"><a className="warehouses--list--individual__details__link" href={`/${wh.id}`} >{wh.warehouse_name} {'>'} </a></p>
                         </div>
                         <div className="warehouses--list--individual__container warehouses--list--individual__address">
                             <p className="warehouses--list--individual__title">ADDRESS</p>
@@ -102,24 +101,24 @@ function WarehouseList () {
             <div className="warehouses--list__desktop">
                 <div className="warehouses--list--header">
                     <div className="warehouses--list--header__item" onClick={() => handleSort("warehouse_name")}>
-                        Warehouse<img src={"../src/assets/Icons/sort-24px.svg"} />
+                        WAREHOUSE<img src={"../src/assets/Icons/sort-24px.svg"} />
                     </div>
                     <div className="warehouses--list--header__item" onClick={() => handleSort("address")}>
-                        Address<img src={"../src/assets/Icons/sort-24px.svg"} />
+                        ADDRESS<img src={"../src/assets/Icons/sort-24px.svg"} />
                     </div>
                     <div className="warehouses--list--header__item" onClick={() => handleSort("contact_name")}>
-                        Contact Name<img src={"../src/assets/Icons/sort-24px.svg"} />
+                        CONTACT NAME<img src={"../src/assets/Icons/sort-24px.svg"} />
                     </div>
                     <div className="warehouses--list--header__item" onClick={() => handleSort("contact_phone")}>
-                        Contact Information<img src={"../src/assets/Icons/sort-24px.svg"} />
+                        CONTACT INFORMATION <img src={"../src/assets/Icons/sort-24px.svg"} />
                     </div>
-                    <div className="warehouses--list--header__item">Actions</div>
+                    <div className="warehouses--list--header__item">ACTION</div>
                 </div>
                 {sortedWarehouses.map((wh) => (
                     <div key={wh.id} className="warehouses--list--individual">
                         <div className="warehouses--list--individual__container warehouses--list--individual__warehouse">
                             <p className="warehouses--list--individual__details">
-                                <a className="warehouses--list--individual__details__link" href={`${API_URL}/api/warehouses/${wh.id}`}>
+                                <a className="warehouses--list--individual__details__link" href={`/${wh.id}`}>
                                     {wh.warehouse_name} {">"}
                                 </a>
                             </p>

@@ -112,6 +112,14 @@
             }
         }
 
+        &__desktop {
+            display: none;
+
+            @include tablet {
+                display: block;
+            }
+        }
+
         &--header{
             display: none;
 
@@ -126,7 +134,6 @@
                 font-size: 12px;
                 color: #5c667e;
                 background-color: #F7F8F9B2;
-                text-transform: uppercase;
                 line-height: 18px;
 
                 &__1 {
