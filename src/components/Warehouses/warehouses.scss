@@ -1,5 +1,5 @@
 @use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
 
 .titillium-web-regular {
     font-family: "Titillium Web", sans-serif;
@@ -16,7 +16,7 @@
 .warehouses {
     width: 343px;
     margin: 136px 16px;
-    box-shadow: 0px 2px 2px 0px #13182C;
+    box-shadow: 0px 2px 2px 0px $instock-black;
 
     @include tablet {
         width: 704px;
@@ -65,7 +65,7 @@
             &--search-bar {
                 width: 295px;
                 height: 36px;
-                border: 1px solid rgb(175, 175, 175, .5);
+                border: 1px solid $cloud;
                 padding-left: 16px;
                 border-radius: 20px;
                 margin-bottom: 16px;
@@ -82,8 +82,8 @@
             }
 
             &--button {
-                background-color: #2E66E5;
-                color: #FFFFFF;
+                background-color: $instock-indigo;
+                color: $white;
                 border-radius: 20px;
                 padding: 8px 84px;
                 margin-bottom: 16px;
@@ -132,8 +132,8 @@
                 padding: 8px 0;
                 font-weight: 600;
                 font-size: 12px;
-                color: #5c667e;
-                background-color: #F7F8F9B2;
+                color: $slate;
+                background-color: $light-grey;
                 line-height: 18px;
 
                 &__1 {
@@ -147,14 +147,14 @@
             flex-wrap: wrap;
             justify-content: space-evenly;
             margin-top: 8px;
-            border-top: 1px solid #BDC5D5; 
+            border-top: 1px solid $cloud; 
 
             @include tablet {
                 flex-direction: row;
                 flex-wrap: nowrap;
                 align-items: center;
                 border-top: none; 
-                border-bottom: 1px solid #BDC5D5; 
+                border-bottom: 1px solid $cloud; 
             }
 
             &--images {
@@ -188,7 +188,7 @@
 
             &__title {
                 font-size: 11px;
-                color: #5C667E;
+                color: $slate;
                 margin-bottom: 8px;
                 display: block;
 
@@ -199,7 +199,7 @@
 
             &__details {
                 font-size: 13px;
-                color: #13182C;
+                color: $instock-black;
                 margin-top: 0;
                 
                 &__link {
