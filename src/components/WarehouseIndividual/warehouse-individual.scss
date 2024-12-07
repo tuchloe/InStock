@@ -1,5 +1,5 @@
 @use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
 
 .titillium-web-regular {
     font-family: "Titillium Web", sans-serif;
@@ -16,7 +16,7 @@
 .individual-warehouse {
     width: 343px;
     margin: 136px 16px;
-    box-shadow: 0px 2px 2px 0px #13182C;
+    box-shadow: 0px 2px 2px 0px $instock-black;
 
     @include tablet {
         width: 704px;
@@ -36,6 +36,11 @@
 
         &__left {
             display: flex;
+            align-items: center;
+
+            &--link {
+                text-decoration: none;
+            }
 
             &--name {
                 font-family: "titillim-web-semibold", Arial, sans-serif;
@@ -45,14 +50,70 @@
         }
 
         &__right {
-            background-color: #2E66E5;
+            background-color: $instock-indigo;
             width: 36px;
             height: 36px;
             border-radius: 20px;
 
+            @include tablet {
+                width: 81px;
+                height: 38px;
+                padding: 8px 16px;
+                border-radius: 30px;
+            }
+
+            &--text {
+                display: none;
+
+                @include tablet {
+                    display: block;
+                    font-family: "titillim-web-semibold", Arial, sans-serif;
+                    color: $white;
+                    margin: 0;
+                    text-align: center;
+                    font-size: 18px;
+                }
+            }
+
             &--image {
                 padding: 5px;
             }
+        }
+    }
+
+    &--info {
+        border-top: 1px solid $cloud;
+        border-bottom: 1px solid $cloud;
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+        &--header {
+            font-size: 11px;
+            color: $slate;
+            font-family: "titillim-web-regular", Arial, sans-serif;
+        }
+
+        &--details {
+            font-size: 13px;
+            color: $instock-black;
+            font-family: "titillim-web-regular", Arial, sans-serif;
+        }
+
+        &__left {
+
+            @include tablet {
+                flex-grow: 2;
+            }
+        }
+
+        &__right {
+            display: flex;
+            justify-content: space-between;
         }
     }
 }
