@@ -12,6 +12,7 @@ const NewWarehouse = () => {
         e.preventDefault();
         
         const formData = {
+            form: e.target,
             warehouseName: e.target.warehouseName.value,
             streetAddress: e.target.streetAddress.value,
             city: e.target.city.value,
