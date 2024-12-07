@@ -138,6 +138,10 @@
                 margin-right: 150px;
                 
             }
+
+            @include desktop {
+                margin-right: 250px;
+            }
         }
 
         &__right {
@@ -152,6 +156,10 @@
 
                 @include tablet {
                     margin: 0 32px;
+                }
+
+                @include desktop {
+                    margin: 0 64px;
                 }
             }
         }
