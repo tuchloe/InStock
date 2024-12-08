@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import WarehouseList from "./components/Warehouses/warehouses.jsx"
+import IndividualWarehouse from "./components/WarehouseIndividual/warehouse-individual.jsx"
 import './App.css'
 
 function App() {
