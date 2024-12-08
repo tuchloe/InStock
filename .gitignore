@@ -1,0 +1,11 @@
+# Dependency directories
+node_modules/
+
+# Production build files
+dist/
+
+# Environment variables
+.env
+
+# Vite and build cache
+.vite/
