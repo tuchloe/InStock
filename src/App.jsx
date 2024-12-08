@@ -6,27 +6,29 @@ function App() {
 
   return (
     <>
-    <Header />
     <BrowserRouter>
 
     <Routes>
       
       <Route path="/" element={
         <>
+        <Header />
         <WarehouseList />
+        <Footer />
         </>
       } />
 
       <Route path="/:id" element={
         <>
+        <Header />
         <IndividualWarehouse />
+        <Footer />
         </>
       } />
 
     </Routes>
 
     </BrowserRouter>
-    <Footer />
 
     </>
   );
