@@ -5,7 +5,6 @@ import Header from "./components/Header/header.jsx";
 import Footer from "./components/Footer/footer.jsx";
 import './App.css'
 
-
 function App() {
 
   return (
@@ -36,6 +35,6 @@ function App() {
 
     </>
   );
-}
+};
 
 export default App;
