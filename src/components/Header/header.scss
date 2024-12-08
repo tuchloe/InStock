@@ -12,12 +12,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    a {
+        text-decoration: none;
+    }
 }
 
 .header__nav{
     display: flex;
     width: 100%;
     justify-content: space-around;
+
+    a {
+        text-decoration: none; // Remove underline
+        
+        &.active p {
+            background-color: $instock-black;
+            color: $white;
+        }
+    }
 
     p{
         color: $cloud;
@@ -61,5 +73,6 @@
     .header__flex{
         padding-left: auto;
         padding-right: auto;
+        width: auto;
     }
 }

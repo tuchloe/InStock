@@ -4,9 +4,11 @@ import IndividualWarehouse from "./components/WarehouseIndividual/warehouse-indi
 import Header from "./components/Header/header.jsx";
 import Footer from "./components/Footer/footer.jsx";
 import './App.css'
+import './App.scss'
+import NewWarehouse from './components/NewWarehouse/NewWarehouse'
+import DeleteWarehouse from './components/Delete warehouse/deleteWarehouse'
 
 function App() {
-
   return (
     <>
     <BrowserRouter>
@@ -36,5 +38,6 @@ function App() {
     </>
   );
 };
+
 
 export default App;
