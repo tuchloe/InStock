@@ -1,9 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from 'react'
+
 import './App.css'
-import './App.scss'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -13,7 +10,18 @@ function App() {
     <BrowserRouter>
 
     <Routes>
-      {/* insert component routes here  */}
+      
+      <Route path="/" element={
+        <>
+        <WarehouseList />
+        </>
+      } />
+
+      <Route path="/:id" element={
+        <>
+        <IndividualWarehouse />
+        </>
+      } />
 
     </Routes>
 
