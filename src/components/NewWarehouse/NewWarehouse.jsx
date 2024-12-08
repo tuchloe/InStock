@@ -30,7 +30,7 @@ const NewWarehouse = () => {
         }
     
         try {
-            const response = await fetch('baseUrl/warehouses', {
+            const response = await fetch(`${baseUrl}/warehouses`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

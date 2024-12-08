@@ -1,11 +1,15 @@
 import closeIcon from "../../assets/icons/close-24px.svg";
-import axios from "axios";
 import "./deleteWarehouse.scss";
 
 export const DeleteWarehouse = ({warehouseName, closeModal, id, reRender }) => {
     const delRequest = async () => {
         try {
-            const response = await axios.delete(`http://localhost:8080/api/warehouses/${id}`)
+            const response = await fetch(`http://localhost:8080/api/warehouses/${id}`, {
+                method: 'DELETE',
+            });
+            if (!response.ok) {
+                throw new Error('Failed to delete warehouse');
+            }
         }
         catch (err) {
             console.error(err)

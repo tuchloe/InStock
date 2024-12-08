@@ -13,10 +13,10 @@ const Header = () => {
     return (
         <header>
             <div className='header__flex'>
-                <img src={logo1x} alt="InStock Logo" />
+                <NavLink to='/'><img src={logo1x} alt='InStock Logo' /></NavLink>
                 <div className='header__nav'>
-                    <p>Warehouses</p>
-                    <p>Inventory</p>
+                    <NavLink to='/warehouses' className='header__nav-link'><p>Warehouses</p></NavLink>
+                    <NavLink to='/inventory' className='header__nav-link'><p>Inventory</p></NavLink>
                 </div>
             </div>
         </header>

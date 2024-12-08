@@ -8,22 +8,18 @@ import NewWarehouse from './components/NewWarehouse/NewWarehouse'
 import DeleteWarehouse from './components/Delete warehouse/deleteWarehouse'
 
 function App() {
-
   return (
     <>
-    <Header />
-    <BrowserRouter>
-
-    <Routes>
-      {/* insert component routes here  */}
-
-    </Routes>
-
-    </BrowserRouter>
-    <Footer />
-
+      <BrowserRouter>
+        <Header/>
+        <Routes>
+          {/* insert component routes here  */}
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
     </>
   );
 }
+
 
 export default App;
