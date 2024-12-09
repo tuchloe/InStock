@@ -1,0 +1,165 @@
+body {
+  background-color: #F7F8F9;
+}
+
+.editWarehouseFlex {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  margin: 1rem;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+.editWarehouseFlex > div {
+  padding: 1rem;
+}
+.editWarehouseFlex label span {
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.editWarehouseFlex label input {
+  border: 1px solid #bdc5d5;
+  border-radius: 20px;
+  padding: 0.7rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+.editWarehouseFlex label input:focus {
+  outline: none;
+  border-color: #2e66e5;
+}
+
+h2 {
+  font-size: 24px;
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 20px;
+  }
+}
+
+.warehouse-details__left {
+  margin-left: 15px;
+  background-color: #2e66e5;
+}
+
+.editWarehouse__flex {
+  display: flex;
+  border-bottom: solid 1px #BDC5D5;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+  color: #232940;
+}
+.editWarehouse__flex img {
+  padding-right: 1rem;
+}
+
+.editWarehouse__input--title {
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.padding__oneRem {
+  padding-bottom: 1rem;
+}
+
+.padding__twoRem {
+  padding-bottom: 2rem;
+}
+
+.form__flex > * {
+  padding-bottom: 1rem;
+}
+.form__flex > :first-child {
+  border-bottom: solid 1px #BDC5D5;
+  margin: 0 -1rem;
+  padding: 1rem;
+}
+.form__flex > :nth-child(2) {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.editWarehouse__submit {
+  display: flex;
+  justify-content: space-around;
+  background-color: #F7F8F9;
+  margin: -1rem -1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+.editWarehouse__submit button {
+  padding: 0.7rem 3rem;
+  border-radius: 2rem;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #2E66E5;
+  cursor: pointer;
+}
+
+#editWarehouse__cancel-button {
+  padding: 0.7rem 3rem;
+  border-radius: 2rem;
+  border: solid 1px #5C667E;
+  color: #5C667E;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .editWarehouseFlex {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .form__flex {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .form__flex > * {
+    width: 50%;
+    padding: 0 2rem;
+    background-color: white;
+  }
+  .form__flex > :first-child {
+    border-bottom: none;
+    border-right: solid 1px #BDC5D5;
+    z-index: 1;
+  }
+  .editWarehouse__submit {
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-right: 2rem;
+    position: relative;
+    top: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .editWarehouseFlex {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+@media (min-width: 1400px) {
+  .editWarehouseFlex {
+    width: auto;
+    max-width: 100%;
+  }
+}
+.editWarehouse__window {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FFFFFF;
+  padding: 40px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=EditWarehouse.css.map */

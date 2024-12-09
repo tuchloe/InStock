@@ -1,0 +1,30 @@
+.footer__padding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 3rem;
+  color: #5C667E;
+  background-color: #F7F8F9;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (min-width: 768px) {
+  .footer__padding {
+    padding-top: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__padding {
+    padding-left: auto;
+    padding-right: auto;
+    width: auto;
+  }
+}/*# sourceMappingURL=footer.css.map */
