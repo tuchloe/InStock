@@ -15,7 +15,7 @@ const Header = () => {
             <div className='header__flex'>
                 <NavLink to='/'><img src={logo1x} alt='InStock Logo' /></NavLink>
                 <div className='header__nav'>
-                    <NavLink to='/warehouses' className='header__nav-link'><p>Warehouses</p></NavLink>
+                    <NavLink to='/' className='header__nav-link'><p>Warehouses</p></NavLink>
                     <NavLink to='/inventory' className='header__nav-link'><p>Inventory</p></NavLink>
                 </div>
             </div>

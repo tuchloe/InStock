@@ -56,24 +56,24 @@ const NewWarehouse = () => {
     return (
         <>
         <form onSubmit={handleSubmit} className='newWarehouseFlex'>
-            <div>
+            <div className='newWarehouse__window'>
                 <div className='addNewWarehouse__flex'>
                     <img src={arrowBack} alt="" />
                     <h1>Add New Warehouse</h1>
                 </div>
                 <div className='form__flex'>
-                    <div>
+                    <div className='warehouse-details__left'>
                         <div className='padding__oneRem'>
                             <h2>Warehouse Details</h2>
                         </div>
                         <label>
-                            <span>Warehouse Name </span><br/> <input type='text' name='warehouseName' placeholder='Warehouse name'/>
+                            <span>Warehouse Name </span><br/> <input type='text' name='warehouseName' placeholder='Warehouse Name'/>
                         </label>
                         <br />
                         <label>
                             <span>Street Address</span>
                             <br /> 
-                            <input type='text' name='streetAddress' placeholder='street address'/>
+                            <input type='text' name='streetAddress' placeholder='Street Address'/>
                         </label>
                         <br />
                         <label>
@@ -107,7 +107,10 @@ const NewWarehouse = () => {
                 </div>
 
                 <div className='newWarehouse__submit'>
-                    <div>Cancel</div>
+
+                    <Link to="/">
+                        <button type="button" id='newWarehouse__cancel-button'>Cancel</button>
+                    </Link>
                     <button>+ Add Warehouse</button>
                 </div>
             </div>
