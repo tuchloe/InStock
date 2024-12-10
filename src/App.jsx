@@ -7,6 +7,7 @@ import './App.css'
 import './App.scss'
 import NewWarehouse from './components/NewWarehouse/NewWarehouse'
 import DeleteWarehouse from './components/Delete warehouse/deleteWarehouse'
+import NewInventory from './components/NewInventory/NewInventory.jsx'
 
 function App() {
   return (
