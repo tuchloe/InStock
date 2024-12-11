@@ -9,6 +9,7 @@ import NewWarehouse from './components/NewWarehouse/NewWarehouse'
 import DeleteWarehouse from './components/Delete warehouse/deleteWarehouse'
 import NewInventory from './components/NewInventory/NewInventory.jsx'
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse.jsx";
+import EditInventory from "./components/EditInventory/EditInventory.jsx";
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function App() {
       <Route path="/edit-inventory" element={
         <>
         <Header />
+        <EditInventory />
         <Footer />
         </>
       } />

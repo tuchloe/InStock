@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { baseUrl } from '../../../utils/utils';
 import './EditWarehouse.scss';
 import arrowBack from '../../assets/Icons/arrow_back-24px.svg';
 
