@@ -1,6 +1,10 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+body {
+    margin: 0;
+}
+
 .header__flex {
     background-color: $graphite;
     padding-top: 1rem;
@@ -12,6 +16,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .header__nav{
@@ -40,10 +46,10 @@
         align-items: center;
         
         img {
-            width: 128px; // Set fixed width for logo
-            height: auto; // Maintain aspect ratio
+            width: 128px;
+            height: auto;
             margin-right: 2rem;
-            object-fit: contain; // Ensure image scales properly
+            object-fit: contain;
         }
         
         .header__nav {

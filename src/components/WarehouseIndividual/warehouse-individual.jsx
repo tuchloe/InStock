@@ -7,15 +7,22 @@ const API_URL = import.meta.env.VITE_APP_API_URL;
 
 function IndividualWarehouse () {
     const {id} = useParams();
+
     const [warehouse, setWarehouse] = useState(null);
+    const [inventory, setInventory] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchData = async () => {
+             const fetchData = async () => {
             try {
                 const response = await axios.get(`${API_URL}/api/warehouses/${id}`);
                 setWarehouse(response.data);
+
+                const inventoryResponse = await axios.get(`${API_URL}/api/warehouses/${id}/inventories`);
+                setInventory(inventoryResponse.data);
             } catch (error) {
-                console.error("Error fetching warehouses:", error);
+                setError("Failed to load warehouse details or inventory");
+                console.error(error);
             }
         };
 
@@ -23,7 +30,7 @@ function IndividualWarehouse () {
     }, [id]);
 
     if (!warehouse) {
-        return <p>Loading...</p>;
+        return <p>Loading warehouse details...</p>;
     }
 
     return (
@@ -59,7 +66,29 @@ function IndividualWarehouse () {
                 </div>
             </div>
 
-            {/* Insert inventory info here  */}
+            {/* Inventory Section  */}
+            <div className="individual-warehouse--inventory">
+                {inventory.length > 0 ? (
+                    <div className="individual-warehouse--inventory__list">
+                        {inventory.map((item) => (
+                            <div key={item.id} className="individual-warehouse--inventory__item">
+                                <p className="individual-warehouse--inventory__item--name">INVENTORY ITEM {item.item_name}</p>
+                                <p className="individual-warehouse--inventory__item--category">CATEGORY {item.category}</p>
+                                <p className="individual-warehouse--inventory__item--status">STATUS {" "}
+                                    <span className={`status-tag ${item.status === "IN STOCK" ? "status-tag--in-stock" : "status-tag--out-of-stock"}`}>
+                                        {item.status}
+                                    </span>
+                                </p>
+                                <p className="individual-warehouse--inventory__item--quantity">QTY {item.quantity}</p>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <p className="individual-warehouse--inventory__empty">
+                        No inventory available for this warehouse.
+                    </p>
+                )}
+            </div>
 
         </section>
         </>
