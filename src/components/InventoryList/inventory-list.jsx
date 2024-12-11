@@ -74,17 +74,17 @@ function InventoryList() {
         
             <div className="inventory__right">
               <p className="inventory__mobile-header">STATUS</p>
-              <p className="inventory__item--spec inventory__item--spec inventory__item--status">
+              <p className="inventory__item--spec inventory__item--status">
                 <span className={`status-tag ${item.status === "IN STOCK" ? "status-tag--in-stock" : "status-tag--out-of-stock"}`}>
                   {item.status}
                 </span>
               </p>
         
               <p className="inventory__mobile-header">QTY</p>
-              <p className="inventory__item--spec inventory__item--spec inventory__item--quantity">{item.quantity}</p>
+              <p className="inventory__item--spec inventory__item--quantity">{item.quantity}</p>
         
               <p className="inventory__mobile-header">WAREHOUSE</p>
-              <p className="inventory__item--spec inventory__item--spec inventory__item--warehouse">{item.warehouse}</p>
+              <p className="inventory__item--spec inventory__item--warehouse">{item.warehouse}</p>
             </div>
           </div>
       
