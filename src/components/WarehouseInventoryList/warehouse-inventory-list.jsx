@@ -10,32 +10,18 @@ function WarehouseInventoryList({ warehouseId }) {
   const [search, setSearch] = useState("");
   const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchInventory = async () => {
-  //     try {
-  //       const response = await axios.get(`${API_URL}/api/warehouses/${warehouseId}/inventory`);
-  //       setInventory(response.data);
-  //     } catch (error) {
-  //       setError("Failed to load inventory");
-  //       console.error(error);
-  //     }
-  //   };
-
-  //   fetchInventory();
-  // }, [warehouseId]);
-
   useEffect(() => {
-    // Mock inventory data
-    const mockInventory = [
-      { id: 1, item_name: "Television", status: "IN STOCK", category: "Electronics", quantity: 50, warehouse: "Manhattan" },
-      { id: 2, item_name: "Gym Bag", status: "OUT OF STOCK", category: "Gear", quantity: 0, warehouse: "Brooklyn" },
-      { id: 3, item_name: "Hoodie", status: "OUT OF STOCK", category: "Apparel", quantity: 0, warehouse: "Queens" },
-    ];
-  
-    // Simulate API call delay
-    setTimeout(() => {
-      setInventory(mockInventory);
-    }, 1000);
+    const fetchInventory = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/api/warehouses/${warehouseId}/inventory`);
+        setInventory(response.data);
+      } catch (error) {
+        setError("Failed to load inventory");
+        console.error(error);
+      }
+    };
+
+    fetchInventory();
   }, [warehouseId]);
 
   const filteredInventory = inventory.filter((item) =>
@@ -65,9 +51,7 @@ function WarehouseInventoryList({ warehouseId }) {
           </div>
         </div>
 
-      {/* Table */}
       <div className="inventory__list">
-        {/* Desktop/Tablet Headers */}
         <div className="inventory__headers">
           <p>INVENTORY ITEM<img src={"../src/assets/Icons/sort-24px.svg"} /></p>
           <p>CATEGORY<img src={"../src/assets/Icons/sort-24px.svg"} /></p>
