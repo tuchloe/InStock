@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WarehouseList from "./components/Warehouses/warehouses.jsx"
 import IndividualWarehouse from "./components/WarehouseIndividual/warehouse-individual.jsx"
+import WarehouseInventoryList from "./components/WarehouseInventoryList/warehouse-inventory-list.jsx";
 import InventoryList from "./components/InventoryList/inventory-list.jsx";
 import InventoryItemDetails from "./components/InventoryItemDetails/inventory-item-details.jsx";
 import Header from "./components/Header/header.jsx";
@@ -23,10 +24,11 @@ function App() {
         </>
       } />
 
-      <Route path="/:id" element={
+      <Route path="/warehouses/:id" element={
         <>
         <Header />
         <IndividualWarehouse />
+        <WarehouseInventoryList />
         <Footer />
         </>
       } />

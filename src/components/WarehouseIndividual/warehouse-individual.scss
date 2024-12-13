@@ -14,17 +14,26 @@
 }
 
 .individual-warehouse {
+    box-sizing: border-box;
     width: 343px;
-    margin: 0 au;
-    box-shadow: 0px 2px 2px 0px $instock-black;
+    background-color: $white;
+    box-shadow: 0px 0px 2px 0.5px $cloud;
+    border-radius: 3px 3px 0 0px;
+    border: none;
+    margin: -60px 16px 0 16px;
+    padding: 16px 0 0 0;
+    position: relative;
+    font-family: "titillim-web-semibold", Arial, sans-serif;
 
     @include tablet {
         width: 704px;
-        margin: auto;
+        margin: -60px 24px 24px 24px;
     }
 
     @include desktop {
         width: 1020px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &--header {
@@ -32,6 +41,9 @@
         justify-content: space-between;
         align-items: center;
         margin: 16px 24px;
+        @include desktop {
+            margin: 16px 48px;
+        }
 
         &__left {
             display: flex;
@@ -101,18 +113,25 @@
             flex-direction: row;
         }
 
+        @include desktop {
+            padding: 24px 48px;
+        }
+
         &--header {
-            font-size: 11px;
+            font-size: 12px;
             color: $slate;
             font-family: "titillim-web-regular", Arial, sans-serif;
+            font-weight: 600;
+            padding-bottom: 12px;
         }
 
         &--details {
+            font-family: "titillim-web-regular", Arial, sans-serif;
+            font-size: 13px;
 
             &__mobile {
             font-size: 13px;
             color: $instock-black;
-            font-family: "titillim-web-regular", Arial, sans-serif;
 
             @include tablet {
                 display: none;
@@ -132,7 +151,8 @@
         }
 
         &__left {
-
+            padding-bottom: 12px;
+            
             @include tablet {
                 margin-right: 150px;
                 

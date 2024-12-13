@@ -9,7 +9,6 @@ function IndividualWarehouse () {
     const {id} = useParams();
 
     const [warehouse, setWarehouse] = useState(null);
-    const [inventory, setInventory] = useState([]);
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -65,31 +64,6 @@ function IndividualWarehouse () {
                     </div>
                 </div>
             </div>
-
-            {/* Inventory Section  */}
-            <div className="individual-warehouse--inventory">
-                {inventory.length > 0 ? (
-                    <div className="individual-warehouse--inventory__list">
-                        {inventory.map((item) => (
-                            <div key={item.id} className="individual-warehouse--inventory__item">
-                                <p className="individual-warehouse--inventory__item--name">INVENTORY ITEM {item.item_name}</p>
-                                <p className="individual-warehouse--inventory__item--category">CATEGORY {item.category}</p>
-                                <p className="individual-warehouse--inventory__item--status">STATUS {" "}
-                                    <span className={`status-tag ${item.status === "IN STOCK" ? "status-tag--in-stock" : "status-tag--out-of-stock"}`}>
-                                        {item.status}
-                                    </span>
-                                </p>
-                                <p className="individual-warehouse--inventory__item--quantity">QTY {item.quantity}</p>
-                            </div>
-                        ))}
-                    </div>
-                ) : (
-                    <p className="individual-warehouse--inventory__empty">
-                        No inventory available for this warehouse.
-                    </p>
-                )}
-            </div>
-
         </section>
         </>
     )
