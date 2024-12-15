@@ -8,15 +8,21 @@ const API_URL = import.meta.env.VITE_APP_API_URL;
 
 function IndividualWarehouse () {
     const {id} = useParams();
+
     const [warehouse, setWarehouse] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchData = async () => {
+             const fetchData = async () => {
             try {
                 const response = await axios.get(`${API_URL}/api/warehouses/${id}`);
                 setWarehouse(response.data);
+
+                const inventoryResponse = await axios.get(`${API_URL}/api/warehouses/${id}/inventories`);
+                setInventory(inventoryResponse.data);
             } catch (error) {
-                console.error("Error fetching warehouses:", error);
+                setError("Failed to load warehouse details or inventory");
+                console.error(error);
             }
         };
 
@@ -24,7 +30,7 @@ function IndividualWarehouse () {
     }, [id]);
 
     if (!warehouse) {
-        return <p>Loading...</p>;
+        return <p>Loading warehouse details...</p>;
     }
 
     return (
@@ -59,9 +65,6 @@ function IndividualWarehouse () {
                     </div>
                 </div>
             </div>
-
-            {/* Insert inventory info here  */}
-
         </section>
         </>
     )
