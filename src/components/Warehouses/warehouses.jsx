@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./warehouses.scss";
@@ -8,13 +9,13 @@ const API_URL = import.meta.env.VITE_APP_API_URL;
 function WarehouseList () {
     const {id} = useParams();
     const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
-    const [warehouses, setWarehouses] = useState([]);
+    const [warehouses, setWarehouses] = useState([]); 
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${API_URL}/api/warehouses`);
-                setWarehouses(response.data);
+                setWarehouses(Array.isArray(response.data) ? response.data : []);
             } catch (error) {
                 console.error("Error fetching warehouses:", error);
             }
@@ -63,7 +64,9 @@ function WarehouseList () {
                         <input className="warehouses--header__right--search-bar" type="text" placeholder="Search... " />
                     </form>
                     <form className="warehouses--header__right--button-container">
-                    <button type="submit" className="warehouses--header__right--button">+ Add New Warehouse</button>
+                        <Link to="/new-warehouse">
+                            <button type="button" className="warehouses--header__right--button">+ Add New Warehouse</button>
+                        </Link>
                     </form>
                 </div>
             </div>

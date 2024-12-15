@@ -1,0 +1,232 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+h1{
+    @include titillium-web-semibold;
+}
+
+.newInventoryFlex{
+    @include titillium-web-semibold; 
+
+    margin: 1rem;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    > div {
+        padding: 1rem;
+    }
+
+    label {
+        label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-weight: lighter;
+            
+            input[type="radio"] {
+                width: auto;
+                margin: 0 0.5rem 0 0;
+                vertical-align: middle;
+            }
+        }
+
+        span{
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        input {
+            border: 1px solid #bdc5d5; 
+            border-radius: 20px; 
+            padding: 0.7rem 1rem; 
+            width: 100%;
+            box-sizing: border-box; 
+            margin-bottom: 1rem;
+        
+            &:focus {
+                outline: none;
+                border-color: #2e66e5; 
+            }
+        }
+    }
+}
+
+.addNewInventory__flex {
+    display: flex;
+    border-bottom: solid 1px $cloud;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+    color: $graphite;
+    img {
+        padding-right: 1rem;
+    }
+}
+
+.newWarehouse__input--title{
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.padding__oneRem--inventory {
+    padding-bottom: 1rem;
+}
+
+.padding__twoRem {
+    padding-bottom: 2rem;
+}
+
+.form__flex--inventory{
+    > * {
+        padding-bottom: 1rem;
+    }
+    > :first-child {
+        border-bottom: solid 1px $cloud;
+        margin: 0 -1rem;
+        padding:  1rem;
+    }
+    > :nth-child(2) {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+}
+
+.newInventory__submit{
+    display: flex;
+    justify-content: space-around;
+    background-color: $light-grey;
+    margin: -1rem -1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+
+    button{
+        padding: 0.7rem 2rem;
+        border-radius: 2rem;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        background-color: $instock-indigo;
+        cursor: pointer;
+    }
+
+    div{
+        padding: 0.7rem 3rem;
+        border-radius: 2rem;
+        border: solid 1px $slate;
+        color: $slate;
+        font-size: 1rem;
+        font-weight: 600;
+        background-color: $white;
+        cursor: pointer;
+    }
+}
+
+textarea {
+    @include titillium-web-semibold;
+    font-weight: lighter;
+    resize: none;  
+    min-height: 120px;
+    border: 1px solid #bdc5d5;
+    border-radius: 20px;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    resize: vertical;
+    min-height: 120px;
+
+    &:focus {
+        outline: none;
+        border-color: #2e66e5;
+    }
+}
+
+select {
+    border: 1px solid #bdc5d5;
+    border-radius: 20px;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    appearance: none; // Removes default browser styling
+    background-color: white;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+        border-color: #2e66e5;
+    }
+
+    // Add a custom dropdown arrow
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+}
+
+// Style for option elements
+option {
+    padding: 0.5rem;
+    
+    &:checked {
+        background-color: #2e66e5;
+        color: white;
+    }
+}
+
+.radio-group {
+    display: flex;
+    gap: 3rem; }
+
+@include tablet {
+    .newInventoryFlex{
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    .form__flex--inventory{
+        display: flex;
+        justify-content: space-evenly;
+        > * {
+            width: 50%;
+            padding: 0 2rem;
+            background-color: white;
+        }
+
+        > :first-child{
+            border-bottom: none;
+            border-right: solid 1px $cloud;
+            z-index: 1;
+        }
+    }
+
+    .newInventory__submit{
+        justify-content:flex-end;
+        gap: 1rem;
+        padding-right: 2rem;
+        position: relative;
+        top:1rem;
+    }
+
+}
+
+@include desktop{
+    .newInventoryFlex{
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+
+}
+
+@media (min-width: 1400px) {
+    .newInventoryFlex{
+        width: auto;
+        max-width: 100%;
+    }
+
+#quantityformfield {
+    width: 50%;
+}
+}

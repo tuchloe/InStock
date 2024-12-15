@@ -18,12 +18,24 @@ body {
     align-items: center;
     position: relative;
     box-sizing: border-box;
+    a {
+        text-decoration: none;
+    }
 }
 
 .header__nav{
     display: flex;
     width: 100%;
     justify-content: space-around;
+
+    a {
+        text-decoration: none; // Remove underline
+        
+        &.active p {
+            background-color: $instock-black;
+            color: $white;
+        }
+    }
 
     p{
         color: $cloud;
@@ -67,5 +79,6 @@ body {
     .header__flex{
         padding-left: auto;
         padding-right: auto;
+        width: auto;
     }
 }
