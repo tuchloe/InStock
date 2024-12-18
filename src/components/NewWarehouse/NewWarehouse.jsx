@@ -58,7 +58,9 @@ const NewWarehouse = () => {
         <form onSubmit={handleSubmit} className='newWarehouseFlex'>
             <div className='newWarehouse__window'>
                 <div className='addNewWarehouse__flex'>
-                    <img src={arrowBack} alt="" />
+                        <a href="/">
+                            <img src={arrowBack} alt="" />
+                        </a>
                     <h1>Add New Warehouse</h1>
                 </div>
                 <div className='form__flex'>
