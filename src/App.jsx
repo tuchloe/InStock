@@ -13,6 +13,8 @@ import DeleteWarehouse from './components/Delete warehouse/deleteWarehouse'
 import NewInventory from './components/NewInventory/NewInventory.jsx'
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse.jsx";
 import EditInventory from "./components/EditInventory/EditInventory.jsx";
+import DeleteInventory from "./components/DeleteInventory/DeleteInventory.jsx";
+DeleteInventory
 
 function App() {
   return (
@@ -103,11 +105,29 @@ function App() {
             <>
             <Header />
         <EditInventory />
-            <Footer />
-            </>
-          } />
-        </Routes>
-      </BrowserRouter>
+        <Footer />
+        </>
+      } />
+
+      <Route path="/delete-warehouse" element={
+        <>
+        <Header />
+        <DeleteWarehouse />
+        <Footer />
+        </>
+      } />
+
+      <Route path="/delete-inventory" element={
+        <>
+        <Header />
+        <DeleteInventory />
+        <Footer />
+        </>
+      } />
+
+
+    </Routes>
+    </BrowserRouter>
     </>
   );
 };
