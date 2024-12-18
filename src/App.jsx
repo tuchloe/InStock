@@ -16,93 +16,96 @@ import EditWarehouse from "./components/EditWarehouse/EditWarehouse.jsx";
 function App() {
   return (
     <>
-    <BrowserRouter>
-    <Routes>
+      <BrowserRouter>
+        <Routes>
       
-      <Route path="/" element={
-        <>
-        <Header />
-        <WarehouseList />
-        <Footer />
-        </>
-      } />
+          <Route path="/" element={
+            <>
+            <Header />
+            <WarehouseList />
+            <Footer />
+            </>
+          } />
 
-      <Route path="/warehouses/:id" element={
-        <>
-        <Header />
-        <IndividualWarehouse />
-        <WarehouseInventoryList />
-        <Footer />
-        </>
-      } />
-        
-      <Route path="/inventory" element={
-        <>
-        <Header />
-        <InventoryList />
-        <Footer />
-        </>
-      } />
+          <Route path="/:id" element={
+            <>
+            <Header />
+            <IndividualWarehouse />
+            <WarehouseInventoryList />
+            <Footer />
+            </>
+          } />
+            
+          <Route path="/inventory" element={
+            <>
+            <Header />
+            <InventoryList />
+            <Footer />
+            </>
+          } />
 
-      <Route path="/inventory/:id" element={
-        <>
-        <Header />
-        <InventoryItemDetails />
-        <Footer />
-        </>
-      } />
-    
-    </Routes>
+          <Route path="/inventory/:id" element={
+            <>
+            <Header />
+            <InventoryItemDetails />
+            <Footer />
+            </>
+          } />
 
-      <Route path="/inventory-list" element={
-        <>
-        <Header />
-        <Footer />
-        </>
-      } />
+          <Route path="/inventory-list" element={
+            <>
+            <Header />
+            <Footer />
+            </>
+          } />
 
+          <Route path="/item-details" element={
+            <>
+            <Header />
+            <Footer />
+            </>
+          } />
 
-      <Route path="/item-details" element={
-        <>
-        <Header />
-        <Footer />
-        </>
-      } />
+          <Route path="/delete-warehouse/:id" element={
+            <>
+            <Header />
+            <DeleteWarehouse />
+            <Footer />
+            </>
+          } />
 
-      <Route path="/edit-warehouse/:id" element={
-        <>
-        <Header />
-        <EditWarehouse />
-        <Footer />
-        </>
-      } />
+          <Route path="/edit-warehouse/:id" element={
+            <>
+            <Header />
+            <EditWarehouse />
+            <Footer />
+            </>
+          } />
 
-      <Route path="/new-warehouse" element={
-        <>
-        <Header />
-        <NewWarehouse />
-        <Footer />
-        </>
-      } />
+          <Route path="/new-warehouse" element={
+            <>
+            <Header />
+            <NewWarehouse />
+            <Footer />
+            </>
+          } />
 
-      <Route path="/add-inventory" element={
-        <>
-        <Header />
-        <NewInventory />
-        <Footer />
-        </>
-      } />
+          <Route path="/add-inventory" element={
+            <>
+            <Header />
+            <NewInventory />
+            <Footer />
+            </>
+          } />
 
-      <Route path="/edit-inventory" element={
-        <>
-        <Header />
-        <Footer />
-        </>
-      } />
-
-
-    </Routes>
-    </BrowserRouter>
+          <Route path="/edit-inventory" element={
+            <>
+            <Header />
+            <Footer />
+            </>
+          } />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
