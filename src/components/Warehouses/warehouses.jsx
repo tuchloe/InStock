@@ -144,8 +144,8 @@ function WarehouseList () {
                                 </p>
                             </div>
                             <div className="warehouses--list--individual--images">
-                                <a href="/delete-warehouse/:id"><img src={"../src/assets/Icons/delete_outline-24px.svg"} /></a>
-                                <a href="/edit-warehouse/:id"><img src={"../src/assets/Icons/edit-24px.svg"} /></a>
+                                <a href={`/delete-warehouse/${wh.id}`}><img src={"../src/assets/Icons/delete_outline-24px.svg"} /></a>
+                                <a href={`/edit-warehouse/${wh.id}`}><img src={"../src/assets/Icons/edit-24px.svg"} /></a>
                             </div>
                         </div>
                     ))}
