@@ -78,7 +78,7 @@ const EditWarehouse = () => {
             <form onSubmit={handleSubmit} className='editWarehouseFlex'>
                 <div className='editWarehouse__window'>
                     <div className='editWarehouse__flex'>
-                        <img src={arrowBack} alt="" />
+                        <img src={arrowBack} alt="/" />
                         <h1>Edit Warehouse</h1>
                     </div>
                     <div className='form__flex'>
