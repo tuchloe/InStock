@@ -1,0 +1,151 @@
+.titillium-web-regular {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.titillium-web-semibold {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.individual-warehouse {
+  width: 343px;
+  margin: 0 au;
+  box-shadow: 0px 2px 2px 0px #13182C;
+}
+@media screen and (min-width: 768px) {
+  .individual-warehouse {
+    width: 704px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .individual-warehouse {
+    width: 1020px;
+  }
+}
+.individual-warehouse--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 24px;
+}
+.individual-warehouse--header__left {
+  display: flex;
+  align-items: center;
+}
+.individual-warehouse--header__left--link {
+  text-decoration: none;
+}
+.individual-warehouse--header__left--name {
+  font-family: "titillim-web-semibold", Arial, sans-serif;
+  font-size: 28px;
+  padding-left: 8px;
+}
+.individual-warehouse--header__right {
+  background-color: #2E66E5;
+  width: 42px;
+  height: 42px;
+  border-radius: 20px;
+  border: none;
+}
+@media screen and (min-width: 768px) {
+  .individual-warehouse--header__right {
+    width: 92px;
+    height: 42px;
+    border-radius: 30px;
+    border: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .individual-warehouse--header__right--content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+.individual-warehouse--header__right--text {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .individual-warehouse--header__right--text {
+    display: block;
+    font-family: "titillim-web-semibold", Arial, sans-serif;
+    color: #FFFFFF;
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+.individual-warehouse--header__right--image {
+  padding: 5px;
+}
+.individual-warehouse--info {
+  border-top: 1px solid #BDC5D5;
+  border-bottom: 1px solid #BDC5D5;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+@media screen and (min-width: 768px) {
+  .individual-warehouse--info {
+    flex-direction: row;
+  }
+}
+.individual-warehouse--info--header {
+  font-size: 11px;
+  color: #5C667E;
+  font-family: "titillim-web-regular", Arial, sans-serif;
+}
+.individual-warehouse--info--details__mobile {
+  font-size: 13px;
+  color: #13182C;
+  font-family: "titillim-web-regular", Arial, sans-serif;
+}
+@media screen and (min-width: 768px) {
+  .individual-warehouse--info--details__mobile {
+    display: none;
+  }
+}
+.individual-warehouse--info--details__tablet {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .individual-warehouse--info--details__tablet {
+    display: block;
+    font-size: 13px;
+    color: #13182C;
+    font-family: "titillim-web-regular", Arial, sans-serif;
+  }
+}
+@media screen and (min-width: 768px) {
+  .individual-warehouse--info__left {
+    margin-right: 150px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .individual-warehouse--info__left {
+    margin-right: 250px;
+  }
+}
+.individual-warehouse--info__right {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .individual-warehouse--info__right {
+    border-left: 1px solid #BDC5D5;
+  }
+}
+@media screen and (min-width: 768px) {
+  .individual-warehouse--info__right--1 {
+    margin: 0 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .individual-warehouse--info__right--1 {
+    margin: 0 64px;
+  }
+}/*# sourceMappingURL=warehouse-individual.css.map */

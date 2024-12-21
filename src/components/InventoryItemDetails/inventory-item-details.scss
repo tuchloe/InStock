@@ -1,0 +1,221 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.titillium-web-regular {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.titillium-web-semibold {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  background-color: $light-grey;
+  box-sizing: border-box;
+  width: 100vw;
+}
+
+.inventory-details {
+  box-sizing: border-box;
+  width: 343px;
+  background-color: $white;
+  box-shadow: 0px 2px 5px 0.5px $cloud;
+  border-radius: 3px;
+  border: none;
+  margin: -60px 16px 16px 16px;
+  position: relative;
+
+  @include tablet {
+    width: 704px;
+    margin: -60px 32px 32px 32px;
+  }
+
+  @include desktop {
+    width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 32px 24px 24px 16px;
+    border-bottom: 1px solid $cloud;
+
+    @include tablet {
+        align-items: center;
+        padding: 32px 32px 21px 20px;
+    }
+
+    @include desktop {
+        padding: 48px 48px 24px 38px;
+        margin: 0;
+    }
+
+    &__left {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 2px;
+
+      @include desktop {
+        gap: 10px;
+      }
+    }
+
+    &__back {
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &__title {
+      font-family: "titillim-web-regular", Arial, sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      margin: 0;
+
+      @include tablet {
+        font-size: 32px;
+      }
+    }
+
+    &__edit {
+      background: $instock-indigo;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+
+      @include tablet {
+        border-radius: 20px;
+        width: 81px;
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+      }
+
+      &__button {
+          width: 20px;
+          height: 20px;
+          filter: brightness(0) invert(1);
+        }
+  
+      &__text {
+        display: none;
+  
+        @include tablet {
+          display: flex;
+          color: $white;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &__item {
+    font-family: "titillim-web-regular", Arial, sans-serif;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 24px 24px 0 24px;
+
+    @include tablet {
+      flex-direction: row;
+      padding: 24px 0 0 0;
+      > div {
+        flex: 1;
+      }
+    }
+
+    &__section {
+      padding: 0 0 24px 0;
+
+      &__left,
+      &__right {
+        @include tablet {
+          padding: 0 32px 0 32px;
+        }
+        @include desktop {
+          padding-left: 48px;
+        }
+      }
+
+      &__right {
+        
+        @include tablet {
+          margin: 0 0 32px 32px;
+          border-left: 1px solid $cloud;
+        }
+      }
+
+      &__status-quantity {
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+
+        > div {
+          flex: 1;
+        }
+      }
+    }
+
+    &__label {
+      font-size: 11px;
+      font-weight: 600;
+      color: $slate;
+      margin: 0;
+    }
+
+    &--spec {
+      margin: 12px 0 0 0;
+      font-size: 13px;
+    }
+
+    &--status {
+      margin-top: 10px;
+    }
+
+    &--quantity {
+      @include tablet {
+        margin-top: 16px;
+      }
+    }
+  }
+}
+
+.status-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 20px;
+  text-transform: uppercase;
+
+  @include tablet {
+    padding: 1px 8px;
+  }
+
+  &--in-stock {
+      background-color: rgba($green, 0.07);
+      color: $green;
+  }
+
+  &--out-of-stock {
+      background-color: rgba($red, 0.07);
+      color: $red;
+  }
+}

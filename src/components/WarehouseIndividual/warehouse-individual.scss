@@ -1,0 +1,265 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.titillium-web-regular {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.titillium-web-semibold {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.individual-warehouse {
+    box-sizing: border-box;
+    width: 343px;
+    background-color: $white;
+    box-shadow: 0px 0px 2px 0.5px $cloud;
+    border-radius: 3px 3px 0 0px;
+    border: none;
+    margin: -60px 16px 0 16px;
+    padding: 16px 0 0 0;
+    position: relative;
+    font-family: "titillim-web-semibold", Arial, sans-serif;
+
+    @include tablet {
+        width: 704px;
+        margin: -60px 24px 24px 24px;
+    }
+
+    @include desktop {
+        width: 1020px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &--header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 16px 24px;
+        @include desktop {
+            margin: 16px 48px;
+        }
+
+        &__left {
+            display: flex;
+            align-items: center;
+
+            &--link {
+                text-decoration: none;
+            }
+
+            &--name {
+                font-family: "titillim-web-semibold", Arial, sans-serif;
+                font-size: 28px;
+                padding-left: 8px;
+            }
+        }
+
+        &__right {
+            background-color: $instock-indigo;
+            width: 42px;
+            height: 42px;
+            border-radius: 20px;
+            border: none;
+
+            @include tablet {
+                width: 92px;
+                height: 42px;
+                border-radius: 30px;
+                border: none;
+            }
+
+            &--content {
+
+                @include tablet {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+            }
+
+            &--text {
+                display: none;
+
+                @include tablet {
+                    display: block;
+                    font-family: "titillim-web-semibold", Arial, sans-serif;
+                    color: $white;
+                    margin: 0;
+                    text-align: center;
+                    font-size: 18px;
+                }
+            }
+
+            &--image {
+                padding: 5px;
+            }
+        }
+    }
+
+    &--info {
+        border-top: 1px solid $cloud;
+        border-bottom: 1px solid $cloud;
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+        @include desktop {
+            padding: 24px 48px;
+        }
+
+        &--header {
+            font-size: 12px;
+            color: $slate;
+            font-family: "titillim-web-regular", Arial, sans-serif;
+            font-weight: 600;
+            padding-bottom: 12px;
+        }
+
+        &--details {
+            font-family: "titillim-web-regular", Arial, sans-serif;
+            font-size: 13px;
+
+            &__mobile {
+            font-size: 13px;
+            color: $instock-black;
+
+            @include tablet {
+                display: none;
+            }
+            }
+
+            &__tablet {
+                display: none;
+
+                @include tablet {
+                    display: block;
+                    font-size: 13px;
+                    color: $instock-black;
+                    font-family: "titillim-web-regular", Arial, sans-serif;
+                }
+            }
+        }
+
+        &__left {
+            padding-bottom: 12px;
+            
+            @include tablet {
+                margin-right: 150px;
+                
+            }
+
+            @include desktop {
+                margin-right: 250px;
+            }
+        }
+
+        &__right {
+            display: flex;
+            justify-content: space-between;
+
+            @include tablet {
+                border-left: 1px solid $cloud;
+            }
+
+            &--1 {
+
+                @include tablet {
+                    margin: 0 32px;
+                }
+
+                @include desktop {
+                    margin: 0 64px;
+                }
+            }
+        }
+    }
+
+    &--inventory {
+        margin-top: 24px;
+    
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+    
+            @include tablet {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                padding: 0 32px;
+            }
+    
+            @include desktop {
+                display: table;
+                width: 100%;
+                border-collapse: collapse;
+                padding: 0 auto;
+            }
+        }
+    
+        &__item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            align-items: center;
+    
+            &--name,
+            &--category,
+            &--status,
+            &--quantity {
+                font-family: "titillim-web-semibold", Arial, sans-serif;
+                font-size: 14px;
+                margin: 4px 0;
+    
+                strong {
+                font-weight: bold;
+                }
+            }
+        }
+    
+        &__empty {
+            font-size: 16px;
+            color: $slate;
+            text-align: center;
+        }
+    }
+}
+
+.status-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 20px;
+    text-transform: uppercase;
+
+    @include tablet {
+        height: 26px;
+        line-height: 26px;
+    }
+
+    &--in-stock {
+        background-color: rgba($green, 0.07);
+        color: $green;
+    }
+
+    &--out-of-stock {
+        background-color: rgba($red, 0.07);
+        color: $red;
+    }
+}

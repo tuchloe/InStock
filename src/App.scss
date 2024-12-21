@@ -1,6 +1,7 @@
 @use './styles/partials/mixins' as *;
 @use './styles/partials/variables' as *;
 
+
 .titillium-web-regular {
   font-family: "Titillium Web", sans-serif;
   font-weight: 400;
@@ -15,6 +16,7 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: "Titillium Web", sans-serif;
 }
 
@@ -41,4 +43,3 @@ h4 {
     font-size: 12px;
   }
 }
-
