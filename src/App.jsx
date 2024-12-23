@@ -51,8 +51,6 @@ function App() {
         <Footer />
         </>
       } />
-    
-    </Routes>
 
       <Route path="/inventory-list" element={
         <>
