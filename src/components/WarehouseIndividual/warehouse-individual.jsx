@@ -41,12 +41,14 @@ function IndividualWarehouse () {
                     <a className="individual-warehouse--header__left--link" href="/"><img className="individual-warehouse--header__left--image" src={"../src/assets/Icons/arrow_back-24px.svg"} /></a>
                     <h1 className="individual-warehouse--header__left--name">{warehouse.warehouse_name}</h1>
                 </div>
+                <a href={`/edit-warehouse/${warehouse.id}`}>
                 <button className="individual-warehouse--header__right">
                     <div className="individual-warehouse--header__right--content">
                         <img className="individual-warehouse--header__right--image" src={"../src/assets/Icons/edit-white-24px.svg"} />
                         <p className="individual-warehouse--header__right--text">Edit</p>
                     </div>
                 </button>
+                </a>
             </div>
             <div className="individual-warehouse--info">
                 <div className="individual-warehouse--info__left">

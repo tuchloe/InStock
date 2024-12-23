@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { baseUrl } from '../../../utils/utils';
 import './EditWarehouse.scss';
 import arrowBack from '../../assets/Icons/arrow_back-24px.svg';
 
@@ -78,7 +77,9 @@ const EditWarehouse = () => {
             <form onSubmit={handleSubmit} className='editWarehouseFlex'>
                 <div className='editWarehouse__window'>
                     <div className='editWarehouse__flex'>
+                        <a href="/">
                         <img src={arrowBack} alt="" />
+                        </a>
                         <h1>Edit Warehouse</h1>
                     </div>
                     <div className='form__flex'>

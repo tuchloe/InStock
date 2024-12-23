@@ -12,8 +12,6 @@
   padding: 1.5rem;
   border-radius: 4px;
   width: 100%;
-  padding-top: 2rem;
-  height: 100%;
   border: none;
   display: flex;
   flex-direction: column;
@@ -27,7 +25,6 @@
   margin-top: 0;
 }
 .modal__button {
-  position: absolute;
   top: 1rem;
   right: 1rem;
   background: none;
@@ -92,4 +89,4 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-}/*# sourceMappingURL=deleteWarehouse.css.map */
+}/*# sourceMappingURL=DeleteInventory.css.map */

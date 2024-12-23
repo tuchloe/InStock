@@ -16,8 +16,6 @@
     padding: 1.5rem;
     border-radius: 4px;
     width: 100%;
-    padding-top: 2rem;
-    height: 100%;
     border: none;
     display: flex;
     flex-direction: column;
@@ -26,13 +24,13 @@
     padding-top: 6rem;
     padding-bottom: 6rem;
     box-sizing: border-box;
+
   
     &__header {
         margin-top: 0;
     }
   
     &__button {
-        position: absolute;
         top: 1rem;
         right: 1rem;
         background: none;
@@ -91,7 +89,6 @@
         height: 30vh;
         padding: 1.5rem;
         max-width: 500px;
-    
     }
 
 }
