@@ -135,7 +135,7 @@ const EditWarehouse = () => {
                     </div>
 
                     <div className='editWarehouse__submit'>
-                        <button type="button" id='editWarehouse__cancel-button' onClick={() => navigate('/warehouses')}>
+                        <button type="button" id='editWarehouse__cancel-button' onClick={() => navigate('/')}>
                             Cancel
                         </button>
                         <button>Save</button>
