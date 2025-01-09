@@ -6,7 +6,7 @@ h1{
     @include titillium-web-semibold;
 }
 
-.newInventoryFlex{
+.editInventoryFlex{
     @include titillium-web-semibold; 
 
     > div {
@@ -57,7 +57,7 @@ h1{
     }
 }
 
-.addNewInventory__flex {
+.editInventory__flex {
     display: flex;
     border-bottom: solid 1px $cloud;
     margin: 0 -1rem;
@@ -68,7 +68,7 @@ h1{
     }
 }
 
-.newWarehouse__input--title{
+.editWarehouse__input--title{
     margin-bottom: 8px;
     display: inline-block;
 }
@@ -96,7 +96,7 @@ h1{
     }
 }
 
-.newInventory__submit{
+.editInventory__submit{
     display: flex;
     justify-content: space-around;
     background-color: $light-grey;
@@ -186,7 +186,7 @@ option {
     gap: 3rem; }
 
 @include tablet {
-    .newInventoryFlex{
+    .editInventoryFlex{
         margin-left: 2rem;
         margin-right: 2rem;
     }
@@ -206,7 +206,7 @@ option {
         }
     }
 
-    .newInventory__submit{
+    .editInventory__submit{
         justify-content:flex-end;
         gap: 1rem;
         padding-right: 2rem;
@@ -217,7 +217,7 @@ option {
 }
 
 @include desktop{
-    .newInventoryFlex{
+    .editInventoryFlex{
         margin-left: 4rem;
         margin-right: 4rem;
     }
@@ -225,7 +225,7 @@ option {
 }
 
 @media (min-width: 1400px) {
-    .newInventoryFlex{
+    .editInventoryFlex{
         width: auto;
         max-width: 100%;
     }

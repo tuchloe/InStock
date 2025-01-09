@@ -2,8 +2,6 @@ import React from 'react';
 import './Footer.scss';
 import '../../styles/partials/_mixins.scss';
 import '../../styles/partials/_variables.scss';
-
-
 const Footer = () => {
     return (
         <footer className='footer__padding'>
@@ -11,5 +9,4 @@ const Footer = () => {
         </footer>
     );
 };
-
 export default Footer;
