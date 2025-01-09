@@ -4,6 +4,7 @@ import "./warehouse-inventory-list.scss";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import arrowBackIcon from "../../assets/Icons/arrow_back-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
+import axios from "axios";
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
@@ -48,7 +49,7 @@ function WarehouseInventoryList() {
             <p className="warehouse-inventory__headers--title">ACTIONS</p>
           </div>
 
-          {warehouse.inventory.map((item) => (
+          {inventory.map((item) => (
             <div key={item.id} className="warehouse-inventory__item">
               <div className="warehouse-inventory__content">
                 <div className="warehouse-inventory__left">
