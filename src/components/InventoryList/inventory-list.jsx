@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./inventory-list.scss";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
+import axios from "axios";
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
