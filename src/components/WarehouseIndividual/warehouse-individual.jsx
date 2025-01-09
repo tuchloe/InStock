@@ -10,6 +10,7 @@ function IndividualWarehouse () {
     const {id} = useParams();
 
     const [warehouse, setWarehouse] = useState(null);
+    const [inventory, setInventory] = useState([]);
     const [error, setError] = useState(null);
 
     useEffect(() => {
