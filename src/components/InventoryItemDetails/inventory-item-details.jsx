@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./inventory-item-details.scss";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import arrowBackIcon from "../../assets/Icons/arrow_back-24px.svg";
+import axios from "axios";
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
@@ -15,7 +16,7 @@ function InventoryItemDetails() {
     useEffect(() => {
       const fetchItemDetails = async () => {
         try {
-          const response = await axios.get(`${API_URL}/api/inventory/${id}`);
+          const response = await axios.get(`${API_URL}/api/inventories/${id}`);
           setItem(response.data);
         } catch (error) {
           setError("Failed to load inventory item details");
