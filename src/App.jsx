@@ -55,20 +55,6 @@ function App() {
             </>
           } />
 
-          <Route path="/inventory-list" element={
-            <>
-            <Header />
-            <Footer />
-            </>
-          } />
-
-          <Route path="/item-details" element={
-            <>
-            <Header />
-            <Footer />
-            </>
-          } />
-
           <Route path="/delete-warehouse/:id" element={
             <>
             <Header />
@@ -104,81 +90,20 @@ function App() {
           <Route path="/edit-inventory" element={
             <>
             <Header />
-        <EditInventory />
-        <Footer />
-        </>
-      } />
+            <EditInventory />
+            <Footer />
+            </>
+          } />
 
-      <Route path="/delete-warehouse" element={
-        <>
-        <Header />
-        <DeleteWarehouse />
-        <Footer />
-        </>
-      } />
-
-<<<<<<< HEAD
-      <Route path="/inventory/:id" element={
-        <>
-        <Header />
-        <InventoryItemDetails />
-        <Footer />
-        </>
-      } />
-
-      <Route path="/inventory-list" element={
-        <>
-        <Header />
-        <Footer />
-        </>
-      } />
-
-
-      <Route path="/item-details" element={
-        <>
-        <Header />
-        <Footer />
-        </>
-      } />
-
-      <Route path="/edit-warehouse/:id" element={
-        <>
-        <Header />
-        <EditWarehouse />
-        <Footer />
-        </>
-      } />
-
-      <Route path="/new-warehouse" element={
-        <>
-        <Header />
-        <NewWarehouse />
-        <Footer />
-        </>
-      } />
-
-      <Route path="/add-inventory" element={
-        <>
-        <Header />
-        <NewInventory />
-        <Footer />
-        </>
-      } />
-
-      <Route path="/edit-inventory" element={
-=======
-      <Route path="/delete-inventory" element={
->>>>>>> 81f355cc3090fe2b27f57061c0fd85ac6ec6ab0a
-        <>
-        <Header />
-        <DeleteInventory />
-        <Footer />
-        </>
-      } />
-
-
-    </Routes>
-    </BrowserRouter>
+          <Route path="/delete-inventory" element={
+            <>
+            <Header />
+            <DeleteInventory />
+            <Footer />
+            </>
+          } />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
