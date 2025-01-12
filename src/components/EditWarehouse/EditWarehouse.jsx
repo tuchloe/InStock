@@ -27,46 +27,70 @@ const EditWarehouse = () => {
         fetchWarehouseData();
     }, [id]);
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const formData = {
-            warehouse_name: e.target.warehouseName.value,
-            address: e.target.streetAddress.value,
-            city: e.target.city.value,
-            country: e.target.country.value,
-            contact_name: e.target.contactName.value,
-            contact_position: e.target.position.value,
-            contact_phone: e.target.phoneNumber.value,
-            contact_email: e.target.email.value
+        const isValidPhoneNumber = (phone) => {
+            const validPhone = /^\+?(\d{1,4})?[-.\s]?(\(?\d{1,4}\)?[-.\s]?)?(\d{1,4}[-.\s]?)*\d{1,4}$/;
+            return validPhone.test(phone);
+        };
+        
+        const isValidEmail = (email) => {
+            const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return validEmail.test(email);
         };
 
-        if (Object.values(formData).some(value => value === "")) {
-            alert("Please fill all fields");
+        const formData = {
+            warehouse_name: e.target.warehouseName.value.trim(),
+            address: e.target.streetAddress.value.trim(),
+            city: e.target.city.value.trim(),
+            country: e.target.country.value.trim(),
+            contact_name: e.target.contactName.value.trim(),
+            contact_position: e.target.position.value.trim(),
+            contact_phone: e.target.phoneNumber.value.trim(),
+            contact_email: e.target.email.value.trim()
+        };
+    
+        if (Object.values(formData).some(value => !value)) {
+            alert('Please fill all fields');
             return;
         }
-
+    
+        if (!isValidPhoneNumber(formData.contact_phone)) {
+            alert('Invalid phone number');
+            return;
+        }
+    
+        if (!isValidEmail(formData.contact_email)) {
+            alert('Invalid email address');
+            return;
+        }
+    
         try {
+            console.log('Sending data:', formData);
+    
             const response = await fetch(`${API_URL}/api/warehouses/${id}`, {
                 method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             });
-
+    
             if (!response.ok) {
+                const errorDetails = await response.json();
+                console.error('Error details:', errorDetails);
                 throw new Error('Network response was not ok');
             }
-
+    
             const data = await response.json();
             console.log('Success:', data);
-            navigate('/warehouses');
+            navigate('/');
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error updating warehouse:', error);
             alert('Failed to update warehouse');
         }
     };
+    
 
     if (!warehouse) {
         return <div>Loading...</div>;
@@ -138,7 +162,7 @@ const EditWarehouse = () => {
                         <button type="button" id='editWarehouse__cancel-button' onClick={() => navigate('/')}>
                             Cancel
                         </button>
-                        <button>Save</button>
+                        <button onClick={() => navigate('/')}>Save</button>
                     </div>
                 </div>
             </form>
