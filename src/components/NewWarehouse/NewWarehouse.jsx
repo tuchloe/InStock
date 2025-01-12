@@ -7,30 +7,29 @@ import arrowBack from '../../assets/Icons/arrow_back-24px.svg';
 
 
 const NewWarehouse = () => {
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         
         const formData = {
-            form: e.target,
-            warehouseName: e.target.warehouseName.value,
-            streetAddress: e.target.streetAddress.value,
+            warehouse_name: e.target.warehouseName.value,
+            address: e.target.streetAddress.value,
             city: e.target.city.value,
             country: e.target.country.value,
-            contactName: e.target.contactName.value,
-            position: e.target.position.value,
-            phoneNumber: e.target.phoneNumber.value,
-            email: e.target.email.value
+            contact_name: e.target.contactName.value,
+            contact_position: e.target.position.value,
+            contact_phone: e.target.phoneNumber.value,
+            contact_email: e.target.email.value
         };
-    
-        // Validation
+
         if (Object.values(formData).some(value => value === "")) {
             alert("Please fill all fields");
             return;
         }
     
         try {
-            const response = await fetch(`${baseUrl}/warehouses`, {
+            const response = await fetch(`${baseUrl}api/warehouses`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,8 +42,9 @@ const NewWarehouse = () => {
             }
     
             const data = await response.json();
-            // Handle successful submission (e.g., redirect or show success message)
             console.log('Success:', data);
+
+            navigate("/");
             
         } catch (error) {
             console.error('Error:', error);
@@ -113,7 +113,7 @@ const NewWarehouse = () => {
                     <Link to="/">
                         <button type="button" id='newWarehouse__cancel-button'>Cancel</button>
                     </Link>
-                    <button>+ Add Warehouse</button>
+                    <button onClick={() => navigate('/')}>+ Add Warehouse</button>
                 </div>
             </div>
         </form>
